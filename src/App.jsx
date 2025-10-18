@@ -4,6 +4,7 @@ import About from './pages/About'
 import PostDetails from './pages/PostDetails'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Admin from './pages/Admin'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/post/:slug" element={<PostDetails />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />

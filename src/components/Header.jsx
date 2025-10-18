@@ -8,6 +8,9 @@ export default function Header() {
         <nav className="space-x-4">
           <Link to="/" className="text-white hover:text-blue-500">Home</Link>
           <Link to="/about" className="text-white hover:text-blue-500">About</Link>
+          <Link to="/admin" className="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white">
+            New Post
+          </Link>
         </nav>
       </div>
     </header>
