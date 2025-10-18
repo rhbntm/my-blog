@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "title": "Getting Started with React",
+      "slug": "getting-started-react",
+      "date": "2025-07-17",
+      "excerpt": "A beginner's guide to building with React and why it's so popular.",
+      "content": "React is a JavaScript library for building user interfaces..."
+    },
+    {
+      "id": 2,
+      "title": "Understanding useEffect",
+      "slug": "understanding-useeffect",
+      "date": "2025-07-16",
+      "excerpt": "This post breaks down how useEffect works in React with examples.",
+      "content": "The useEffect hook lets you perform side effects in function components..."
+    },
+    {
+      "id": 3,
+      "title": "Test ",
+      "slug": "understanding-useeffect",
+      "date": "2025-07-16",
+      "excerpt": "This post breaks down how useEffect works in React with examples.",
+      "content": "The useEffect hook lets you perform side effects in function components..."
+    }
+  ]
+  
