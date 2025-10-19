@@ -7,23 +7,25 @@ export default function Admin() {
   const { register, handleSubmit, formState: { errors }, reset } = useForm();
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
+  const API_URL = 'http://localhost:5000/api/posts';
 
   const onSubmit = async (data) => {
-    const newPost = {
-      id: uuidv4(),
-      title: data.title,
-      content: data.content,
-      author: data.author || 'Admin',
-      date: new Date().toISOString().split('T')[0],
-      tags: data.tags ? data.tags.split(',').map(tag => tag.trim()) : []
-    };
-
     try {
-      // In a real app, you would send this to a backend API
-      console.log('New post:', newPost);
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to save post');
+      }
+
       setSuccess('Post created successfully!');
       reset();
-      
+
       setTimeout(() => {
         navigate('/');
       }, 1500);
@@ -33,16 +35,17 @@ export default function Admin() {
     }
   };
 
+
   return (
     <div className="max-w-2xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6">Add New Blog Post</h1>
-      
+
       {success && (
         <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
           {success}
         </div>
       )}
-      
+
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
         <div>
           <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
